@@ -46,8 +46,21 @@ $ rake theme:switch name="the-program" //更改主题
 ###jekyllbootstrap配置：###
 所有配置都可以在_config.yml中配置
 
+###安装pygments高亮代码###
+{% highlight bash %}
+#安装pygments
+$ apt-get install python-pygments
+#生成css文件到本地git仓库
+$ pygmentize -S default -f html > css/pygments/default.css
+{% endhighlight %}
+{% highlight html %}
+<!--在_includes/themes/themesname/default.html中包含css文件-->
+<link href="{{ BASE_PATH }}/css/pygments/default.css" rel="stylesheet">
+{% endhighlight %}
 
 ###参考文件：###
 快速搭建：github blog：http://jekyllbootstrap.com/index.html#start-now
 
 jekyll快速指南：http://jekyllbootstrap.com/usage/jekyll-quick-start.html
+
+语法高亮：http://www.stehem.net/2012/02/14/how-to-get-pygments-to-work-with-jekyll.html
